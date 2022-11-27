@@ -1,0 +1,75 @@
+sudo docker run -d \
+  --name earnapp \
+  --restart always \
+  -v earnapp-data:/etc/earnapp \
+  -e EARNAPP_UUID='@YOUR_UUID' \
+  fazalfarhan01/earnapp:lite
+
+sudo docker run -d \
+  --platform=linux/amd64 \
+  --name honeygain \
+  --restart always \
+  -e HONEYGAIN_DUMMY='' \
+  honeygain/honeygain -tou-accept -email @YOUREMAIL -pass @YOURPASSWD -device @DEVICENAME
+
+sudo docker run -d \
+  --name iproyal \
+  --restart always \
+  -e IPROYALPAWNS_DUMMY='' \
+  iproyal/pawns-cli:latest -accept-tos -email=@YOUREMAIL -password=@YOURPASSWD -device-name=@DEVICENAME
+
+sudo docker run -d \
+  --name peer2profit \
+  --restart always \
+  -e P2P_EMAIL='@YOUREMAIL' \
+  peer2profit/peer2profit_linux:latest
+
+sudo docker run -d \
+  --platform=linux/amd64 \
+  --name packetstream \
+  --restart always \
+  -e CID='@YOUR_CID' \
+  packetstream/psclient:latest
+
+sudo docker run -d \
+  --name traffmonetizer \
+  --restart always \
+  -e TRAFFMONETIZER_DUMMY='' \
+  traffmonetizer/cli:arm32v7 start accept status --token @YOURTOKEN --device-name @DEVICENAME
+
+sudo docker run -d \
+  --platform=linux/amd64 \
+  --name repocket \
+  --restart always \
+  -e RP_EMAIL='@YOUREMAIL' \
+  -e RP_PASSWORD='@YOURPASSWD' \
+  repocket/repocket:latest
+
+sudo docker run -d \
+  --platform=linux/amd64 \
+  --name bitping \
+  --restart always \
+  -e BITPING_DUMMY='' \
+  -v /home/.data/.bitping:/root/.bitping \
+  bitping/bitping-node:latest
+
+sudo docker run -d \
+  --name watchtower \
+  --restart always \
+  -e WATCHTOWER_POLL_INTERVAL='9000' \
+  -e WATCHTOWER_ROLLING_RESTART='true' \
+  -e WATCHTOWER_NO_STARTUP_MESSAGE='true' \
+  -e WATCHTOWER_CLEANUP='true' \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  containrrr/watchtower
+
+sudo docker run -d \
+  --name homarr \
+  --restart unless-stopped \
+  -p 7575:7575 \
+  -v /homarr/configs:/app/data/configs \
+  -v /homarr/icons:/app/public/icons \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  ghcr.io/ajnart/homarr:latest
+
+
