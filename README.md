@@ -1,8 +1,8 @@
 # PocketMoneyMaker
 
-The following sites run a program where they pay little money for a very small part of your internet bandwidth.
-It won't make you rich, but opposed to other sites which require you to fill forms, play games etc. these apps require no action from you at all after setting up - a true "Passive Income" :)
-I created docker commands optimized for RaspberryPi 3/4
+The following sites run a program where they pay little money for a very small part of your internet bandwidth.<p>
+It won't make you rich, but opposed to other sites which require you to fill forms, play games etc. these apps require no action from you at all after setting up - a true "Passive Income" :) <p>
+I created docker commands optimized for RaspberryPi 3/4 <p>
 
 1. Sign up to one or more of the following sites
 2. Use your relevant identification in the docker commands
