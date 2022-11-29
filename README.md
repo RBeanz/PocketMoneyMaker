@@ -1,7 +1,8 @@
 # PocketMoneyMaker
 
 <p>It won&apos;t make you rich, but opposed to other sites which require you to fill forms, play games etc. these apps require no action from you at all after setting up - a true &quot;Passive Income&quot; &#128521;</p>
-<p>I created docker commands optimized for RaspberryPi 3/4</p>
+I created docker commands optimized for RaspberryPi 3/4<br>
+update: I also added a docker compose file, you can either one</p>
 <ol>
     <li>Sign up to one or more of the following sites&nbsp;</li>
     <li>Use your relevant identification in the docker commands&nbsp;</li>
