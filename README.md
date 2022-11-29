@@ -16,5 +16,17 @@ I created docker commands optimized for RaspberryPi 3/4 <p>
 <a href="https://pawns.app?r=1062288" rel="noopener noreferrer" target="_blank">pawns.app</a><p>
 <a href="https://r.honeygain.me/MRGAO7878C" rel="noopener noreferrer" target="_blank">honeygain.me</a><p>
 <a href="https://earnapp.com/i/paIKIJnU" rel="noopener noreferrer" target="_blank">earnapp.com</a><p>
-<a href="https://app.bitping.com?r=a5kAh17b" rel="noopener noreferrer" target="_blank">bitping.com</a><p>
 
+<a href="https://app.bitping.com?r=a5kAh17b" rel="noopener noreferrer" target="_blank">bitping.com</a><p>
+<b>Bitping</b> requires a different setup - the app need to be started at least once in interactive mode for the first connection.
+Use the following command in your home folder:
+sudo docker run --rm -it -v ${PWD}/.data/.bitping/:/root/.bitping bitping/bitping-node:latest
+The container will run and ask for your credentials, after you're succefully authenticated it will create a sub folder with the connection parameters.
+Now you can use CTRL+C to stop the container and proceed with the standard docker setup. It will be faster since the image has already been downloaded.
+<p> <p>
+<b><u>Emulation for ARM devices (RPi)</b></u><p>
+In some cases you may encounter an error:<p>
+WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested<p>
+To fix that you need to install an emulator using the following command:<p>
+sudo docker run --privileged --rm tonistiigi/binfmt --install all<p>
+You can find more info <a href="https://enlear.academy/run-amd64-docker-images-on-an-arm-computer-208929004510" rel="noopener noreferrer" target="_blank">here</a>.
