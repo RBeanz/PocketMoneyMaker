@@ -1,6 +1,6 @@
 # PocketMoneyMaker
 
-<p>It won&apos;t make you rich, but opposed to other sites which require you to fill forms, play games etc. these apps require no action from you at all after setting up - a true &quot;Passive Income&quot; :)</p>
+<p>It won&apos;t make you rich, but opposed to other sites which require you to fill forms, play games etc. these apps require no action from you at all after setting up - a true &quot;Passive Income&quot; &#128521;</p>
 <p>I created docker commands optimized for RaspberryPi 3/4</p>
 <ol>
     <li>Sign up to one or more of the following sites&nbsp;</li>
@@ -31,4 +31,4 @@
 
 <b>#Important Tips</b>
 1. Do not use $ (dollar sign) in your passwords. Linux environments do not like it.
-2. If you think about using a cheap hosted VPS (Virtual Private Server) to run these apps, unfortunately it won't work :( The apps check the ip address and when it's associated with a hosting platform or a VPN provider they won't use your bandwith.
+2. If you think about using a cheap hosted VPS (Virtual Private Server) to run these apps, unfortunately it won't work &#128533;. The apps check the ip address and when it's associated with a hosting platform or a VPN provider they won't use your bandwith.
