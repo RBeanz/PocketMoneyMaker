@@ -28,3 +28,7 @@
 <p>To fix that, you need to install an emulator using the following command:</p>
 <p><span style="background-color: rgb(239, 239, 239);">sudo docker run --privileged --rm tonistiigi/binfmt --install all</span></p>
 <p>You can find more info <a href="https://enlear.academy/run-amd64-docker-images-on-an-arm-computer-208929004510" rel="noopener noreferrer" target="_blank">here</a>.</p>
+
+<b>#Important Tips</b>
+1. Do not use $ (dollar sign) in your passwords. Linux environments do not like it.
+2. If you think about using a cheap hosted VPS (Virtual Private Server) to run these apps, unfortunately it won't work :( The apps check the ip address and when it's associated with a hosting platform or a VPN provider they won't use your bandwith.
