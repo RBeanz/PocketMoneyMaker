@@ -1,0 +1,99 @@
+#############################################################
+# This Docker-compose file is configured for Raspberry Pi
+#############################################################
+
+version: '3.3'
+
+services:
+# EARNAPP CONTAINER
+# echo -n 'YOUR_DEVICE' | md5sum | sed 's/.*/sdk-node-&/'
+# https://earnapp.com/r/YOUR_HASH
+  earnapp:
+    container_name: earnapp
+    image: fazalfarhan01/earnapp:lite
+    environment:
+      - EARNAPP_UUID=sdk-node-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    volumes:
+      - ${PWD}/earnapp-data:/etc/earnapp
+    restart: always
+
+# HONEYGAIN CONTAINER
+  honeygain:
+    container_name: honeygain
+    image: honeygain/honeygain
+    environment:
+      - HONEYGAIN_DUMMY=''
+      - DOCKER_DEFAULT_PLATFORM=linux/amd64
+    command: -tou-accept -email YOUR_EMAIL@ADDRESS -pass YOUR_PASSWORD -device YOUR_DEVICE
+    restart: always
+
+# IPROYAL CONTAINER
+  iproyal:
+    container_name: iproyal
+    image: iproyal/pawns-cli:latest
+    environment:
+      - IPROYALPAWNS_DUMMY=''
+    command: -accept-tos -email=YOUR_EMAIL@ADDRESS -password=YOUR_PASSWORD -device-name=YOUR_DEVICE
+    restart: always
+
+# PEER2PROFIT CONTAINER
+  Peer2profit:
+    container_name: peer2profit
+    image: peer2profit/peer2profit_linux:latest
+    environment:
+      - P2P_EMAIL=YOUR_EMAIL@ADDRESS
+    restart: always
+
+# PACKETSTREAM CONTAINER
+  Packetstream:
+    container_name: packetstream
+    image: packetstream/psclient:latest
+    environment:
+      - CID=XXXX
+      - DOCKER_DEFAULT_PLATFORM=linux/amd64
+    restart: always
+
+# TRAFFMONETIZER CONTAINER
+  TraffMonetizer:
+    container_name: traffmonetizer
+    image: traffmonetizer/cli:arm32v7
+    environment:
+      - TRAFFMONETIZER_DUMMY=''
+    command: start accept status --token YOUR_TOKEN --device-name YOUR_DEVICE
+    restart: always
+
+# REPOCKET CONTAINER
+  Repocket:
+    container_name: repocket
+    image: repocket/repocket:latest
+    environment:
+      - RP_EMAIL=YOUR_EMAIL@ADDRESS
+      - RP_PASSWORD=YOUR_PASSWORD
+      - DOCKER_DEFAULT_PLATFORM=linux/amd64
+    restart: always
+
+# BITPING CONTAINER 
+ # first run "sudo docker run --rm -it -v ${PWD}/.data/.bitping/:/root/.bitping bitping/bitping-node:latest"
+  Bitping:
+    container_name: bitping
+    image: bitping/bitping-node:latest
+    environment:
+      - BITPING_DUMMY=''
+      - DOCKER_DEFAULT_PLATFORM=linux/amd64
+    volumes:
+      - ${PWD}/.data/.bitping:/root/.bitping
+    restart: always
+      
+      
+# WATCHTOWER AUTO-UPDATER AND NOTIFICATIONS
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=9000
+      - WATCHTOWER_ROLLING_RESTART=true
+      - WATCHTOWER_NO_STARTUP_MESSAGE=true
+      - WATCHTOWER_CLEANUP=true
+    restart: always
