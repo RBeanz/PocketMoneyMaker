@@ -20,7 +20,7 @@
 <p><span style="background-color: rgb(239, 239, 239);">echo -n &apos;<em>YOUR_DEVICE_NAME</em>&apos; | md5sum | sed &apos;s/.*/sdk-node-&amp;/&apos;</span></p>
 <p>To register your node using the hash use the following link: https://earnapp.com/r/YOUR_HASH</p>
 <p><a href="https://app.bitping.com?r=a5kAh17b" rel="noopener noreferrer" target="_blank">bitping.com</a></p>
-<p><strong>Bitping</strong> requires a different setup - the app need to be started at least once in interactive mode for the first connection. Use the following command in your home folder: sudo docker run --rm -it -v ${PWD}/.data/.bitping/:/root/.bitping bitping/bitping-node:latest The container will run and ask for your credentials, after you&apos;re succefully authenticated it will create a sub folder with the connection parameters. Now you can use CTRL+C to stop the container and proceed with the standard docker setup. It will be faster since the image has already been downloaded.</p>
+<p><strong>Bitping</strong> requires a different setup - the app need to be started in interactive mode for the first connection. Use the following command in your home folder: sudo docker run --rm -it -v ${PWD}/.data/.bitping/:/root/.bitping bitping/bitping-node:latest The container will run and ask for your credentials, after you&apos;re succefully authenticated it will create a sub folder with the connection parameters. Now you can use CTRL+C to stop the container and proceed with the standard docker setup. It will be faster since the image has already been downloaded.</p>
 <p><br></p>
 <p><strong><u>Emulation for ARM devices (RPi)</u></strong></p>
 <p>In some cases you may encounter an error:</p>
